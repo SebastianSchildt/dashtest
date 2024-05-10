@@ -1,0 +1,20 @@
+name: Check Dash
+
+on:
+  push:
+    branches: [ main]
+  pull_request:
+  workflow_call:
+  workflow_dispatch:
+
+jobs:
+    lint:
+        name: test
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+
+            - name: Dash license check
+              uses: boschglobal/kuksa-actions/check-dash@feature/dash-token
+              with:
+                dashinput: ${{github.workspace}}/dashtest
