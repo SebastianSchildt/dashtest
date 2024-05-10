@@ -18,3 +18,4 @@ jobs:
               uses: boschglobal/kuksa-actions/check-dash@feature/dash-token
               with:
                 dashinput: ${{github.workspace}}/dashtest
+                dashtoken: ${{ secrets.ECLIPSE_GITLAB_API_TOKEN }}
